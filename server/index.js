@@ -12,10 +12,12 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? false : 'http://localhost:5173',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: ["https://todo-app-two-sepia-39.vercel.app"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
